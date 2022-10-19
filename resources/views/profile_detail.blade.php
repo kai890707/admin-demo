@@ -107,7 +107,8 @@
                         <div class="portfolio-details-slider swiper">
                             <div class="swiper-wrapper align-items-center">
                                 <div class="swiper-slide">
-                                    <img src=/Storage/{{$news[0]->img_path}} alt="">
+                                    <!-- if deploy on server,must be change path to "storage/app/public/{img_path}"  -->
+                                    <img src="storage/{{$news[0]->img_path}}" alt="">
                                 </div>
                             </div>
                             <div class="swiper-pagination"></div>

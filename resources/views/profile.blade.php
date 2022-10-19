@@ -131,11 +131,16 @@
                     @foreach ($news as $n)
                     <div class='col-lg-4 col-md-6 portfolio-wrap filter-{{$n->category_id}}'>
                         <div class="portfolio-item">
+
+                            <!-- if deploy on server,must be change path to "storage/app/public/{img_path}"  -->
                             <img src="storage/{{$n->img_path}}" class="img-fluid" alt="">
+
+
                             <div class="portfolio-info">
                                 <h3>{{$n->year}}</h3>
                                 <h3>{{$n->news_title}}</h3>
                                 <div>
+                                    <!-- if deploy on server,must be change path to "storage/app/public/{img_path}"  -->
                                     <a href="storage/{{$n->img_path}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$n->news_title}}"><i class="bx bx-plus"></i></a>
                                     <a href="/{{$n->id}}" title="Portfolio Details"><i class="bx bx-link"></i></a>
                                 </div>

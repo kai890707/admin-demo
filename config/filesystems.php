@@ -34,14 +34,6 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
-
-        'public' => [
-            'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
-            'visibility' => 'public',
-        ],
-
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -52,19 +44,39 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
+
+        //local
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').':8000' . '/storage',    // set url
+            'url' => env('APP_URL'). '/storage',    // set url
             'visibility' => 'public',
         ],
         'admin' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'visibility' =>'public',
-            'url' => env('APP_URL') . ':8000' . '/storage',
+            'url' => env('APP_URL') . '/storage',
         ],
 
+        // production conf start
+
+        // 'links' => [
+        //     public_path('storage') => storage_path('app/public'),
+        // ],
+        // 'public' => [
+        //     'driver' => 'local',
+        //     'root' => storage_path('app/public'),
+        //     'url' => env('APP_URL') . '/storage/app/public',
+        //     'visibility' => 'public',
+        // ],
+        // 'admin' => [
+        //     'driver' => 'local',
+        //     'root' => storage_path('app/public'),
+        //     'visibility' => 'public',
+        //     'url' => env('APP_URL')  . '/storage',
+        // ],
+    // production conf start
     ],
 
     /*
